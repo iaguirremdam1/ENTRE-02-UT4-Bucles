@@ -1,17 +1,18 @@
+import java.util.Random;
 /**
- *    @author - 
+ *    @author - Íñigo Aguirre
  */
 public class DemoBucles
 {
     private final char ASTERISCO = '*';
     private final char ESPACIO = ' ';
-
+    private Random generador;
     /**
      * Constructor  
      */
     public DemoBucles()
     {
-       
+        generador = new Random();
     }
 
     /**
@@ -26,9 +27,11 @@ public class DemoBucles
      *  Usa bucles while
      */
     public int mayorPotencia2(int numero) {
-        
-        return 0;
-
+        int potencia = 1;
+        while (potencia * 2 <= numero) {
+            potencia = potencia * 2;
+        }
+        return potencia;
     }
 
     /**
@@ -48,8 +51,6 @@ public class DemoBucles
      */
     public void escribirSumaPotencias(int numero) {
 
-         
-
     }
 
     /**
@@ -64,9 +65,19 @@ public class DemoBucles
      * 
      */
     public void generarAleatorios(int n) {
-
-       
-
+        int random = generador.nextInt(256);
+        int i = 1;
+        while(random != 0 && i <= n){
+            random = generador.nextInt(256);
+            i++;
+            System.out.println(random);
+        }
+        if (random == 0) {
+            System.out.println("Como ha salido 0, el bucle se ha acabado");
+        } else{
+            System.out.println("El bucle se ha acabado porque se han generado "            
+                + n + " números aleatorios");
+        }   
     }
 
     /**
@@ -76,7 +87,9 @@ public class DemoBucles
      */
     public void escribirCaracter(int n, char caracter)
     {
-         
+        for (int i = 1; i <= n; i++) {
+            System.out.print(caracter);
+        }
     }
 
     /**
@@ -87,9 +100,15 @@ public class DemoBucles
      */
     public  void mostrarEscalera(int escalones, int alto, int ancho) {
         System.out.println();
-
-         
-
+        for(int i=0; i<escalones; i++)
+        {
+            for(int j=0; j<alto; j++)
+            {
+                escribirCaracter(ancho, ESPACIO);
+                escribirCaracter(ancho, ASTERISCO);
+            }
+            System.out.print("\n");
+        }
     }
 
 }

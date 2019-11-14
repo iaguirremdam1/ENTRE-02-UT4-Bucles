@@ -1,6 +1,6 @@
-
+import java.util.Scanner;
 /**
- *  @author - 
+ *  @author - Íñigo Aguirre
  *  
  * Incluye todo el código dentro del main()
  * No declares ningún nuevo método en esta clase ni atributos
@@ -8,7 +8,9 @@
  */
 public class AppDemoBucles
 {
-
+    private Scanner teclado;
+    private DemoBucles demoBucles ;
+    private Utilidades utilidad;
     /**
      *  Punto de entrada a la aplicación. Dentro del main:
      *  - define y crea el teclado  
@@ -25,7 +27,9 @@ public class AppDemoBucles
      */
     public static void main(String[] args)
     {
-         
+        Scanner teclado = new Scanner(System.in);
+        DemoBucles demoBucles = new DemoBucles();
+        Utilidades utilidad = new Utilidades();
     }
 }
 
